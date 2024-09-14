@@ -302,8 +302,12 @@ elif page == "Interactive Map with NYC Landmarks and Ride Paths":
     st.markdown("The following map shows the most popular ride paths relative to popular NYC landmarks. This, coupled with the information we have about rider profile, demonstrates where Citibike needs to increase availability. It can be seen that the rides paths aren't always initiated or concluded near popular landmarks. While this might be surprising, it reinforces the need that citibike members (potentially residents) might have over the lesser numbered casual riders motivated by toursim. While this map doesn't show the exact ride path a user has taken, starting and ending stations near Central Park and along the waterfront appear to be especially popular.")
 
     ## Interactive Map ##
+    ## Interactive Map (Stations) ##
+    # Get the directory of the current script
+    script_dir = os.path.dirname(__file__) 
 
-    map_path = "//Users/piperdutcher/Documents/Data-Visualizations/Bike-Sharing/final_landmark_map.html"
+    # Define the path to the interactive map HTML file
+    map_path = os.path.join(script_dir, 'final_landmark_map.html')
 
     # Read file and keep in variable 
     with open(map_path, 'r') as f:
@@ -320,12 +324,17 @@ elif page == "Interactive Map with Citibike Stations":
     st.header("Interactive Map with Citibike Stations")
     st.markdown("The below map identifies all current Citibike Stations, with red colors representing increased frequency/popularity. When comparing this with the previous map, it is clear that there exists opportunities for Citibike to expand and create several new stations. Some of these are along the waterfront (both Hudson River and West Channel), while other growth opportunities could be surrounding Central Park, due to it's popularity with all types of riders.")
 
-        ## Interactive Map (Stations) ##
+    ## Interactive Map (Stations) ##
+    # Get the directory of the current script
+    script_dir = os.path.dirname(__file__) 
 
-    map_2 = "/Users/piperdutcher/Documents/Data-Visualizations/Bike-Sharing/Final_Station_Map.html"
+    # Define the path to the interactive map HTML file
+    map_path2 = os.path.join(script_dir, 'Final_Station_Map.html')
+
+
 
     # Read file and keep in variable 
-    with open(map_2, 'r') as e:
+    with open(map_path2, 'r') as e:
          html_data2 = e.read()
 
      ## Show in web page ##
