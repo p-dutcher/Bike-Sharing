@@ -27,10 +27,10 @@ page = st.sidebar.selectbox('Analysis Detail',
 
 ################### Import Data ###########################
 
-# Get the directory of the current script
+# Get the directory of the current script (will need for streamlit)
 script_dir = os.path.dirname(__file__) 
 
-# Define paths to each CSV file relative to the script's directory
+# define paths for data
 data_path = os.path.join(script_dir, 'Data/FINAL DATA SETS', 'Final_Sample.csv')
 daily_ride_counts_path = os.path.join(script_dir, 'Data/FINAL DATA SETS', 'Daily_ride_counts_ONLY.csv')
 member_types_path = os.path.join(script_dir, 'Data/FINAL DATA SETS', 'member_types.csv')
@@ -58,13 +58,17 @@ if page == "Introduction":
     st.markdown(" - Recommendations")
     st.markdown("The dropdown menu on the left can be utilized to view different aspects of the analysis and recommendations page.")
 
-            # Intro Image #
-            
-    IntroImage = Image.open('/Users/piperdutcher/Documents/Data-Visualizations/Bike-Sharing/Images/CitiBike.jpg')
-    #st.image(IntroImage)
 
-    ## resizing this##
-    resized_image = IntroImage.resize((1150, 500))
+    # Define path
+    intro_image_path = os.path.join(script_dir, 'Images', 'CitiBike.jpg')
+
+    # Open the image
+    intro_image = Image.open(intro_image_path)
+
+    # Resize
+    resized_image = intro_image.resize((1150, 500))
+
+    # Display
     st.image(resized_image)
 
 ################### Rider Profile Page ##################################
@@ -353,8 +357,14 @@ else:
     st.header("Conclusion and Limitations")
     st.markdown("NYC is a vast and lucrative market for Citibike with opportunity for growth and increased profitability. While solutions to several key business questions have been proposed, it is important to note that there were some limitations to this analysis. The primary limiting factor was the size of the dataset. After consistency checks and wrangling steps were performed, the data had to be sampled to improve workability. While the random sample has reproducible results, the total counts of riders and rides are only representative of a fraction of the dataset and actual figures are significantly greater.")
 
-    bikepic = Image.open("/Users/piperdutcher/Documents/Data-Visualizations/Bike-Sharing/Images/citibike4.jpg")
+    # Define path for bike_pic
+    bike_pic_path = os.path.join(script_dir, 'Images', 'citibike4.jpg')
 
-     ## resizing this##
-    resized_image = bikepic.resize((1300, 700))
-    st.image(resized_image)
+    # Open the image
+    bike_pic = Image.open(bike_pic_path)
+
+    # Resize the image
+    resized_bike = bike_pic.resize((1300, 700))
+
+    # Display
+    st.image(resized_bike)
