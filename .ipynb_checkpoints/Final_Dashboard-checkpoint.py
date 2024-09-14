@@ -12,6 +12,7 @@ from keplergl import KeplerGl
 from datetime import datetime as dt 
 from numerize.numerize import numerize
 from PIL import Image
+import os
 
 ################### Configure Dashboard ###################
 
@@ -26,16 +27,22 @@ page = st.sidebar.selectbox('Analysis Detail',
 
 ################### Import Data ###########################
 
-df = pd.read_csv('/Users/piperdutcher/Documents/Data-Visualizations/Bike-Sharing/Data/FINAL DATA SETS/Final_Sample.csv', index_col = 0)
+# Get the directory of the current script
+script_dir = os.path.dirname(__file__) 
 
-df_temp = pd.read_csv('/Users/piperdutcher/Documents/Data-Visualizations/Bike-Sharing/Data/FINAL DATA SETS/Daily_ride_counts_ONLY.csv', index_col = 0)
+# Define paths to each CSV file relative to the script's directory
+data_path = os.path.join(script_dir, 'Data/FINAL DATA SETS', 'Final_Sample.csv')
+daily_ride_counts_path = os.path.join(script_dir, 'Data/FINAL DATA SETS', 'Daily_ride_counts_ONLY.csv')
+member_types_path = os.path.join(script_dir, 'Data/FINAL DATA SETS', 'member_types.csv')
+rideable_types_path = os.path.join(script_dir, 'Data/FINAL DATA SETS', 'rideable_types.csv')
+trip_length_seasons_path = os.path.join(script_dir, 'Data/FINAL DATA SETS', 'trip_length_seasons.csv')
 
-member_types = pd.read_csv('/Users/piperdutcher/Documents/Data-Visualizations/Bike-Sharing/Data/FINAL DATA SETS/member_types.csv', index_col = 0)
-
-rideable_types = pd.read_csv('/Users/piperdutcher/Documents/Data-Visualizations/Bike-Sharing/Data/FINAL DATA SETS/rideable_types.csv', index_col = 0)
-
-trip_length_seasons = pd.read_csv('/Users/piperdutcher/Documents/Data-Visualizations/Bike-Sharing/Data/FINAL DATA SETS/trip_length_seasons.csv', index_col = 0)
-
+# Read the CSV files
+df = pd.read_csv(data_path, index_col=0)
+df_temp = pd.read_csv(daily_ride_counts_path, index_col=0)
+member_types = pd.read_csv(member_types_path, index_col=0)
+rideable_types = pd.read_csv(rideable_types_path, index_col=0)
+trip_length_seasons = pd.read_csv(trip_length_seasons_path, index_col=0)
 
 ################### Introduction ##################################
 
