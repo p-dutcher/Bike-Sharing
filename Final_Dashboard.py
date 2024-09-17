@@ -75,7 +75,7 @@ if page == "Introduction":
 
 elif page == "Riders & Rideables":
     st.header("General Composition of Rider and Rideable Types")
-    st.markdown("Understanding the primary rider and rideable types can give insight into future demand and potential marketing strategies. CitiBike currently offers two membership types in the NYC area along with both classic and electric bicycles. Members pay a subscription fee then recieve unlimited rides on classic bike types and reduced fees on e-bikes. Casual riders do not pay the subscription fee, and instead pay for usage time in predetermined increments.")
+    st.markdown("Understanding the primary rider and rideable types can give insight into future demand and potential marketing strategies. CitiBike currently offers two membership types in the NYC area along with both classic and electric bicycles. Members pay a subscription fee then receive unlimited rides on classic bike types and reduced fees on e-bikes. Casual riders do not pay the subscription fee, and instead pay for usage time in predetermined increments.")
 
     # Adding a sidebar for smmber type selection:
     with st.sidebar:
@@ -162,7 +162,7 @@ elif page == "Riders & Rideables":
     trip_length_column.plotly_chart(avg_trip_length_fig, use_container_width = False)
 
     
-    st.markdown('Currently Citibike members comprise 77.9% of the total riders in the NYC area. This indicates a need for consistent availability for returning users. While members tend to have a shorter ride length by nearly 10 minutes relative to casual riders. With the majority of Citibikes being of the classic variety (60.7%), and e-bikes being incentivized to members, this indicates an opportunity for expansion and increased profit as e-bike demand increases. A seasonal effect in total ride time can be noted, with summer and winter months haveing the shortest and longest ride times respectively. This seasonal effect also comes into play when assessing popularity of certain starting and ending stations for all Citibike riders.')
+    st.markdown('Currently Citibike members comprise 77.9% of the total riders in the NYC area. This indicates a need for consistent availability for returning users. While members tend to have a shorter ride length by nearly 10 minutes relative to casual riders. With the majority of Citibikes being of the classic variety (60.7%), and e-bikes being incentivized to members, this indicates an opportunity for expansion and increased profit as e-bike demand increases. A seasonal effect in total ride time can be noted, with summer and winter months having the shortest and longest ride times respectively. This seasonal effect also comes into play when assessing popularity of certain starting and ending stations for all Citibike riders.')
 
 ################### Popular Stations Page ##################################
 
@@ -292,14 +292,14 @@ elif page == "Weather Impact on Rider Activity":
     st.plotly_chart(fig3, use_container_width=True)
 
     ## markdown discussing weather impact ##
-    st.markdown("The average daily temperature and total ride count are closely connected with few exceptions. Rider activity is highest in the summer months and lowest when the temperature drops in the winter months. In fact, rides in the summer account for 34.5% of all rides taken throughout the year, with winter months accounting for just 12.7% rides. It's clear that a seasonal impact is present and warm weather equates to more Citibike users. This insight coincides with the decreased average ride times (as seen in the Riders and Rideables analysis tab) abd can be used to identify future need for increased rideable availability in warmer months. It should be noted that when temperature spikes are exceptionally high, rider activity is decreased.")
+    st.markdown("The average daily temperature and total ride count are closely connected with few exceptions. Rider activity is highest in the summer months and lowest when the temperature drops in the winter months. In fact, rides in the summer account for 34.5% of all rides taken throughout the year, with winter months accounting for just 12.7% rides. It's clear that a seasonal impact is present and warm weather equates to more Citibike users. This insight coincides with the decreased average ride times (as seen in the Riders and Rideables analysis tab) and can be used to identify future need for increased rideable availability in warmer months. It should be noted that when temperature spikes are exceptionally high, rider activity is decreased.")
 
 
 ################### Interactive Map Page ##################################
 
 elif page == "Interactive Map with NYC Landmarks and Ride Paths":
     st.header("Interactive Map of Ride Paths and Landmarks")
-    st.markdown("The following map shows the most popular ride paths relative to popular NYC landmarks. This, coupled with the information we have about rider profile, demonstrates where Citibike needs to increase availability. It can be seen that the rides paths aren't always initiated or concluded near popular landmarks. While this might be surprising, it reinforces the need that citibike members (potentially residents) might have over the lesser numbered casual riders motivated by toursim. While this map doesn't show the exact ride path a user has taken, starting and ending stations near Central Park and along the waterfront appear to be especially popular.")
+    st.markdown("The following map shows the most popular ride paths relative to popular NYC landmarks. This, coupled with the information we have about rider profile, demonstrates where Citibike needs to increase availability. It can be seen that the rides paths aren't always initiated or concluded near popular landmarks. While this might be surprising, it reinforces the need that Citibike members (potentially residents) might have over the lesser-numbered casual riders (possibly motivated by toursim). While this map doesn't show the exact ride path a user has taken, starting and ending stations near Central Park and along the waterfront appear to be especially popular.")
 
     ## Interactive Map ##
     ## Interactive Map (Stations) ##
@@ -348,10 +348,10 @@ elif page == "Recommendations":
     st.header("Recommendations and Response to Key Business Questions:") 
     st.markdown("")
     st.markdown("- How much would you recommend scaling bikes back between November and April?")
-    st.markdown("With the obvious increase in demand in the summer months, scaling back during the winter months is a great way to increase profit margin and reduce costs. The winter and spring months (Nov-Apr) combined only account for 36% of all rides, while summer months account for 34.5% of total  rides. Scaling back bike availability by 50% would still leave room for growth and increasing demand, but reduce the number of bikes not being used.")
+    st.markdown("With the obvious increase in demand in the summer months, scaling back during the winter months is a great way to increase profit margin and reduce costs. The winter and spring months (Nov-Apr) combined only account for 36% of all rides, while summer months account for 34.5% of total rides. Scaling back bike availability by 50% would still leave room for growth and increasing biciyle demand, but reduce the number of bikes not being used.")
     st.markdown("")
     st.markdown("- How could you determine how many more stations to add along the water?")
-    st.markdown("To identify potential need along waterfront locales, the first step would be to obersve the most popular ride paths and the popularity of current start and ending stations. Along the Hudson River, there is a long (but popular) ride path that could be shortened by adding a station near the Chelsea Waterslide Park. Ganesvoort Peninsula and Pier 45 are also along this ride path and could be potentially viable. Along the West Channel, Citibike could benefit from a station near John Jay Park as it is close to pre-existing popular ride paths as well. Additional stations surrounding Central Park also demonstrate potential based on popular ride paths. ")
+    st.markdown("To identify potential need along waterfront locales, the first step would be to observe the most popular ride paths and the popularity of current starting and ending stations. Along the Hudson River, there is a long (but popular) ride path that could be shortened by adding a station near the Chelsea Waterslide Park. Ganesvoort Peninsula and Pier 45 are also along this ride path and could be potentially viable stations. Along the West Channel, Citibike could benefit from a station near John Jay Park as it is close to pre-existing popular ride paths. Additional stations surrounding Central Park also demonstrate potential based on popular ride paths. ")
     st.markdown("")
     st.markdown("- What are some ideas for ensuring bikes are always stocked at the most popular stations?")
     st.markdown("To ensure bicycle availability, Citibike could implement a discount or incentive for riders to make round-trips from popular stations. While this might not equate to the exact same bike being returned, a similar rideable would complete the trip. This could be applied in the form of a discount offered to a rider if they return a rideable to the popular station from which they departed within the next 12-24 hours. Due to many riders being members, they're more likely to be consistent users that would benefit from a round-trip type of service.")
